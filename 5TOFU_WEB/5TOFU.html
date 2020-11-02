@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>5TOFU</title>
+    <meta name="description" content="2020 - 5TOFU">
+    <script src="js/1.0.4aframe.js"></script>
+    <script src="js/aframe-master.js"></script>
+    <script src="js/unpkg-event-set.js"></script>
+    <script src="js/unpkg-layout.js"></script>
+    <script src="js/unpkg-template.js"></script>
+    <script src="js/unpkg-proxy-event.js"></script>
+    <script src="js/rawgit-cursor.js"></script>
+    <script src="js/unpkg-animation.js"></script>
+    <script src="js/AVideoPlayer.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/aframe-mouse-cursor-component.min.js"></script>
+    
+    
+    
+    <!-- Image link template to be reused. -->
+    <script id="link1" type="text/html">
+      <a-entity class="link"    
+        geometry="primitive: plane; height: 1; width: 1;"
+        material="shader: flat; src: ${thumb}; transparent: true; opacity: 0.99"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade"
+        sound="on: click; src: #click-sound1"></a-entity>
+    </script>
+    <script id="link2" type="text/html">
+      <a-entity class="link"    
+        geometry="primitive: plane; height: 1; width: 1;"
+        material="shader: flat; src: ${thumb}; transparent: true; opacity: 0.99"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade"
+        sound="on: click; src: #click-sound2"></a-entity>
+    </script>
+    <script id="link3" type="text/html">
+      <a-entity class="link"    
+        geometry="primitive: plane; height: 1; width: 1;"
+        material="shader: flat; src: ${thumb}; transparent: true; opacity: 0.99"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade"
+        sound="on: click; src: #click-sound3"></a-entity>
+    </script>
+    <script id="link4" type="text/html">
+      <a-entity class="link"    
+        geometry="primitive: plane; height: 1; width: 1;"
+        material="shader: flat; src: ${thumb}; transparent: true; opacity: 0.99"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade"
+        sound="on: click; src: #click-sound4"></a-entity>
+    </script>
+    <script id="link6" type="text/html">
+      <a-entity class="link"    
+        geometry="primitive: plane; height: 1; width: 1;"
+        material="shader: flat; src: ${thumb}; transparent: true; opacity: 0.99"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade"
+        sound="on: click; src: #click-sound6"
+        href="Video.html">
+        
+        
+        
+        >    
+        </a-entity>
+    </script>
+
+    <!--
+    <script id="link2" type="text/html" >
+      <a-entity class="link"    
+        geometry="primitive: plane; height: 1.5; width: 1;"
+        material="shader: flat; src: ${thumb}; transparent: true; opacity: 0.95"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src};"
+        proxy-event="event: click; to: #image-360; as: fade"
+        sound="on: click; src: #click-sound"></a-entity>
+    </script>
+    -->
+    
+       
+  </head>
+
+    <a-scene>
+      
+      
+
+      <a-assets>
+       
+        <img id="About" crossorigin="anonymous" img src="img/About_page.png" >
+        <img id="Scene1" crossorigin="anonymous" img src="img/Scene_1_View.png">
+        <img id="Scene2" crossorigin="anonymous" img src="img/Scene_2_View.png">
+        <img id="Scene3" crossorigin="anonymous" img src="img/Scene_3_View.png">
+        <img id="Contact" crossorigin="anonymous" img src="img/Scene_3_View.png">
+        
+        <img id="About-thumb" crossorigin="anonymous" src="img/About.png">
+        <img id="Scene1-thumb" crossorigin="anonymous" src="img/Scene1.png">
+        <img id="Scene2-thumb" crossorigin="anonymous" src="img/Scene2.png">
+        <img id="Scene3-thumb" crossorigin="anonymous" src="img/Scene3.png">
+        <img id="Contact-thumb" crossorigin="anonymous" src="img/Contact.png">
+        <img id="Movie-thumb" crossorigin="anonymous" src="img/Movie.png" >
+        
+        <audio id="click-sound1" crossorigin="anonymous" src="Audio/About.wav"></audio>
+        <audio id="click-sound2" crossorigin="anonymous" src="Audio/scene1.WAV"></audio>
+        <audio id="click-sound3" crossorigin="anonymous" src="Audio/scene2.WAV"></audio>
+        <audio id="click-sound4" crossorigin="anonymous" src="Audio/scene3.WAV"></audio>
+        <audio id="click-sound5" crossorigin="anonymous" src="Audio/Contact.WAV"></audio>
+        <audio id="click-sound6" crossorigin="anonymous" src="Audio/link_button.wav"></audio>
+      </a-assets>
+
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="10" src="#About"
+             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
+
+      <!-- 이미지 위치, 링크값. -->
+      <a-entity id="links" layout="type: line; margin: 1.5" position="-1.5 -0.5 -3" >
+        <a-entity template="src: #link2" data-src="#Scene1" data-thumb="#Scene1-thumb"></a-entity>
+        <a-entity template="src: #link3" data-src="#Scene2" data-thumb="#Scene2-thumb"></a-entity>
+        <a-entity template="src: #link4" data-src="#Scene3" data-thumb="#Scene3-thumb"></a-entity>
+      </a-entity>
+      
+      <a-entity id="links" layout="type: line; margin: 1.5" position="-3 -0.5 0.2" rotation="0 90 0" >
+        <a-entity template="src: #link1" data-src="#About" data-thumb="#About-thumb"></a-entity>
+        <a-entity template="src: #link6" data-src="#Contact" data-thumb="#Movie-thumb"></a-entity>
+      </a-entity>
+      
+      
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls wasd-controls>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__mouseenter="_event: mouseenter; color: springgreen"
+          event-set__mouseleave="_event: mouseleave; color: black"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+    </a-scene>
+    </script>
+  </body>
+</html>
