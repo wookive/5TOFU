@@ -1,2 +1,1 @@
-# 5TOFU
-5TOFU_WEBSITE
+계원예술대학교 디지털미디어디자인 TEAM : 5TOFU / N.D.E 웹사이트 입니다.
